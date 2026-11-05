@@ -1,3 +1,8 @@
+## Java 예약·거래 상태 서버
+
+중고 상품 예약·취소·완료, 두 동시성 제어 방식 및 MySQL 통합 테스트를 추가했습니다. [실행 방법과 거래 정책](backend-java/README.md)을 참고하세요. 기존 iOS 앱과는 별도 API 서버입니다.
+
+
 
 #(1) OnFit - OOTD 패션 SNS iOS App
 

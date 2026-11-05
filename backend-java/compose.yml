@@ -1,0 +1,18 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: onfit
+      MYSQL_USER: onfit
+      MYSQL_PASSWORD: onfit-local
+      MYSQL_ROOT_PASSWORD: onfit-root-local
+    ports:
+      - "127.0.0.1:3307:3306"
+    volumes:
+      - onfit_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1"]
+      interval: 3s
+      retries: 30
+volumes:
+  onfit_mysql:

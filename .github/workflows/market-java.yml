@@ -1,0 +1,23 @@
+name: Market Java integration
+on:
+  push:
+    paths: ['backend-java/**', '.github/workflows/market-java.yml']
+  pull_request:
+    paths: ['backend-java/**', '.github/workflows/market-java.yml']
+permissions:
+  contents: read
+jobs:
+  mysql-integration:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend-java
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+          cache-dependency-path: backend-java/pom.xml
+      - run: ./mvnw --batch-mode test

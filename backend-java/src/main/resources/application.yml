@@ -1,0 +1,13 @@
+server:
+  address: ${SERVER_ADDRESS:127.0.0.1}
+  port: ${PORT:8080}
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://127.0.0.1:3307/onfit}
+    username: ${DB_USER:onfit}
+    password: ${DB_PASSWORD:onfit-local}
+    hikari:
+      maximum-pool-size: 20
+      connection-timeout: 30000
+onfit:
+  reservation-strategy: ${RESERVATION_STRATEGY:CONDITIONAL}
